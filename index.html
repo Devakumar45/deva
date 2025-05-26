@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Popup Example</title>
+  <style>
+    /* The popup background */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    /* The popup content */
+    .popup-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      margin: 100px auto;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Trigger button -->
+  <button onclick="showPopup()">Show Popup</button>
+
+  <!-- Popup Structure -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+      <span class="close-btn" onclick="hidePopup()">×</span>
+      <h2>Hello!</h2>
+      <p>This is a dynamic popup.</p>
+    </div>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById('popup').style.display = 'block';
+    }
+
+    function hidePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
